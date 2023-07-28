@@ -38,7 +38,11 @@ Functions through Terminal.
 - I learned to extend a parent class to a child class to share attributes
 - I furthered my understanding of functions
 
-![Demonstration](/assets/reader-demo.mp4)
+
+
+https://github.com/chlarson74/svg-gen/assets/137223285/67d86bab-e241-45fc-a53a-433bd34b65ad
+
+
 
 ## Author Info
 
