@@ -14,7 +14,7 @@ inquirer.prompt([
     },
     {
         question:"What color do you want?",
-        name:"shapeColor",
+        name:"fillColor",
         type:"input",
     },
     {
@@ -29,13 +29,21 @@ inquirer.prompt([
     }
 ]) 
 .then(response => {
+    // const fillColor = response.fillColor;
     const svg = new Shape()
-    svg.setColor(response.shapeColor)
+    //the fill is empty - there must be a problem with the shapeColor/fillColor response
+    svg.setColor(response.fillColor)
     let shape;
     if (response.shape === "Circle") {
-        shape = new Circle(response.textColor,response.text)
+        shape = new Circle(response.textColor,response.text,response.fillColor)
     }
-//duplicate above for other shapes
+    if (response.shape === "Square") {
+        shape = new Square(response.textColor,response.text,response.fillColor)
+    }
+    if (response.shape === "Triangle") {
+        shape = new Triangle(response.textColor,response.text,response.fillColor)
+    }
+
     svg.setShape(shape.render())
     fs.writeFileSync("./examples/logo.svg",svg.render())
 })
